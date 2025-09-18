@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Gift Survey</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Employee Gift Fulfillment Survey</h1>
+      <p>Please complete the form below to request a holiday gift shipment.</p>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <form id="surveyForm" novalidate>
+          <fieldset>
+            <legend>Employee Details</legend>
+            <label for="employeeName">Your Name<span aria-hidden="true">*</span></label>
+            <input id="employeeName" name="employeeName" type="text" required autocomplete="name" />
+
+            <label for="department">Department<span aria-hidden="true">*</span></label>
+            <input id="department" name="department" type="text" required autocomplete="organization" />
+          </fieldset>
+
+          <fieldset>
+            <legend>Recipient Information</legend>
+            <label for="shippingAddress">Shipping Address<span aria-hidden="true">*</span></label>
+            <textarea id="shippingAddress" name="shippingAddress" rows="3" required></textarea>
+
+            <label for="recipientName">Recipient Name<span aria-hidden="true">*</span></label>
+            <input id="recipientName" name="recipientName" type="text" required />
+
+            <label for="recipientPhone">Recipient Phone<span aria-hidden="true">*</span></label>
+            <input
+              id="recipientPhone"
+              name="recipientPhone"
+              type="tel"
+              required
+              placeholder="e.g. +1 555 123 4567"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Gift Selection</legend>
+            <label for="giftId">Gift Choice<span aria-hidden="true">*</span></label>
+            <select id="giftId" name="giftId" required disabled>
+              <option value="">Loading gifts…</option>
+            </select>
+
+            <label for="notes">Notes for fulfillment</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Optional special instructions"></textarea>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit">Submit Survey</button>
+          </div>
+        </form>
+        <div id="formMessage" class="form-message visually-hidden" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>
+        Administrators can manage available gifts on the
+        <a href="/admin.html">upload page</a>.
+      </p>
+    </footer>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>

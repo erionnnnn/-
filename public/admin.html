@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift Catalog Upload</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Gift Catalog Administration</h1>
+      <p>Upload the latest gift list to power the employee survey form.</p>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <form id="uploadForm">
+          <fieldset>
+            <legend>Gift list upload</legend>
+            <p class="help-text">
+              Accepts CSV or XLSX files with the headers <code>giftId</code>, <code>name</code>,
+              <code>description</code>, and optional <code>category</code>.
+            </p>
+            <label for="giftFile">Gift file<span aria-hidden="true">*</span></label>
+            <input id="giftFile" name="giftFile" type="file" accept=".csv,.xlsx" required />
+          </fieldset>
+          <div class="form-actions">
+            <button type="submit">Upload</button>
+          </div>
+        </form>
+        <div id="uploadMessage" class="form-message visually-hidden" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p><a href="/index.html">Return to survey form</a></p>
+    </footer>
+
+    <script src="/admin.js" defer></script>
+  </body>
+</html>
